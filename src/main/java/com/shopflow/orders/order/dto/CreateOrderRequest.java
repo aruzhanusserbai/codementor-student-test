@@ -1,12 +1,14 @@
 package com.shopflow.orders.order.dto;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
 public class CreateOrderRequest {
 
     @Valid
+    @NotEmpty
     private List<OrderItemRequest> items;
 
     public List<OrderItemRequest> getItems() {
