@@ -44,3 +44,5 @@ The API is described in [CONTRACT.md](CONTRACT.md).
    name), and the mentor bot comments with hints. A PR from a branch that does
    not follow the naming rule is not checked: the check fails with a message
    asking you to rename the branch.
+
+Small README fix.
