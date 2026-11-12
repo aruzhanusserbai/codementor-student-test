@@ -1,5 +1,6 @@
 package com.shopflow.orders.product;
 
+import com.shopflow.orders.common.ProductNotFoundException;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,11 @@ public class ProductService {
         return productRepository.findAll(Sort.by("id")).stream()
                 .map(ProductResponse::from)
                 .toList();
+    }
+
+    public ProductResponse getById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(id));
+        return ProductResponse.from(product);
     }
 }

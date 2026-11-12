@@ -1,6 +1,7 @@
 package com.shopflow.orders.product;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,10 @@ public class ProductController {
     @GetMapping
     public List<ProductResponse> getAll() {
         return productService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public ProductResponse getById(@PathVariable Long id) {
+        return productService.getById(id);
     }
 }
