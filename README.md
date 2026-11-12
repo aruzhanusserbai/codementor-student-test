@@ -46,3 +46,4 @@ The API is described in [CONTRACT.md](CONTRACT.md).
    asking you to rename the branch.
 
 Small README fix.
+Another small README fix.
