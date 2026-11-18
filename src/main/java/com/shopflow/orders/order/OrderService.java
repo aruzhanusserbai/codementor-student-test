@@ -51,7 +51,7 @@ public class OrderService {
                 throw new InvalidOrderException("All products in an order must have the same currency");
             }
             BigDecimal lineTotal = product.getPrice().multiply(BigDecimal.valueOf(itemRequest.getQuantity()));
-            total.add(lineTotal);
+            total = total.add(lineTotal);
             order.addItem(new OrderItem(product, itemRequest.getQuantity(), product.getPrice()));
         }
         order.setTotal(total);
